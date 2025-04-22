@@ -1,0 +1,45 @@
+Actividad 1: Investigación práctica
+`<string.h>`
+
+`strlen`: Devuelve la longitud de una cadena (sin contar el '\0').
+prototipo [size_t strlen(const char *str);]
+Retorna: número de caracteres (sin el '\0').
+
+strcpy: Copia una cadena completa a otra (incluye el '\0').
+Prototipo [char *strcpy(char *dest, const char *src);]
+Retorna: puntero a dest.
+
+strncpy: Copia hasta n caracteres de una cadena a otra.
+Prototipo [char *strncpy(char *dest, const char *src, size_t n);]
+Retorna: puntero a dest.
+
+strcat: Añade una cadena al final de otra. (une)
+Prototipo [char *strcat(char *dest, const char *src);]
+Retorna: puntero a dest.
+
+strncat: Concatena hasta n caracteres de una cadena a otra.
+Prototipo [char *strncat(char *dest, const char *src, size_t n);]
+Retorna: 0 si son iguales
+
+strcmp: Compara dos cadenas completas.
+Prototipo [int strcmp(const char *s1, const char *s2);]
+Retorna: lo mismo que strcmp.
+
+strchr: Busca la primera ocurrencia de un carácter en una cadena.
+Prototipo [char *strchr(const char *str, int c);]
+Retorna: puntero a la primera ocurrencia (o NULL si no está).
+
+strstr: Busca una subcadena dentro de otra.
+Prototipo [char *strstr(const char *haystack, const char *needle);]
+Retorna: puntero al inicio de la subcadena (o NULL).
+
+strtok: Divide una cadena en tokens (palabras) usando delimitadores (como espacios, comas, etc.).
+Prototipo [char *strtok(char *str, const char *delim);]
+Retorna: el siguiente token, o NULL.
+
+
+
+
+
+
+
