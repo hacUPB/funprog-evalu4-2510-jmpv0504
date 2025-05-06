@@ -1,0 +1,27 @@
+1. ¿Qué almacena un puntero?
+B) La dirección de memoria de otra variable.
+
+Un puntero en C (y en otros lenguajes similares) almacena la dirección de memoria donde se 
+encuentra una variable. No guarda directamente el valor, sino 
+dónde está ubicado ese valor en la memoria.
+
+2. ¿Cuál es el operador para obtener la dirección de una variable?
+B) &
+
+El operador & se usa para obtener la dirección de memoria de una variable.
+
+3. ¿Cómo se llama la operación de acceder al valor apuntado por un puntero?
+B) * (Desreferenciación)
+
+La operación de acceder al valor al que apunta un puntero se llama desreferenciación, y se hace con el operador *.
+
+4. En el contexto de punteros, describa brevemente qué significa ‘paso por referencia’.
+
+En el contexto de punteros, "paso por referencia" significa que una función recibe la dirección de memoria de una variable, en lugar de una copia de su valor. (La función puede modificar directamente la variable original, ya que tiene acceso a su ubicación en memoria.)
+
+5. Si ptr es un puntero a int, ¿qué hace ptr = 5;?
+A) Asigna 5 al puntero mismo.
+
+significa que se está asignando el valor 5 como dirección de memoria al puntero ptr.
+Es decir, ptr ahora apunta a la dirección 5
+
