@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-
 void menu()
 {
     printf(" MENU ");
@@ -45,10 +44,12 @@ int cargar(char texto[])
     
     
 // Estadísticas
-void estadisticas(char texto[]) {
+void estadisticas(char texto[])
+{
     int letras = 0, palabras = 0, lineas = 1;
 
-    for (int i = 0; texto[i] != '\0'; i++) {
+    for (int i = 0; texto[i] != '\0'; i++)
+    {
         if (isalpha(texto[i])) letras++;
         if (texto[i] == ' ') palabras++;
         if (texto[i] == '\n') lineas++;
@@ -59,3 +60,37 @@ void estadisticas(char texto[]) {
     printf("Palabras: %d\n", palabras + 1);
     printf("Lineas: %d\n", lineas);
 }
+
+void contar_vocales(char texto[]) {
+    int a = 0, e = 0, i = 0, o = 0, u = 0;
+
+    for (int j = 0; texto[j] != '\0'; j++)
+    {
+        if (texto[j] == 'a' || texto[j] == 'A') a++;
+        else if (texto[j] == 'e' || texto[j] == 'E') e++;
+        else if (texto[j] == 'i' || texto[j] == 'I') i++;   //se cuentan las vocales tanto M como m
+        else if (texto[j] == 'o' || texto[j] == 'O') o++;
+        else if (texto[j] == 'u' || texto[j] == 'U') u++;
+    }
+
+    printf("VOCALES:");
+    printf("a: %d\n", a);
+    printf("e: %d\n", e);
+    printf("i: %d\n", i);
+    printf("o: %d\n", o);
+    printf("u: %d\n", u);
+}
+int main() {
+    char *texto = NULL;
+    int opcion;
+
+    do {
+        menu();
+        scanf("%d", &opcion);
+        getchar(); // Limpiar el salto de línea que queda en el buffer
+
+        switch (opcion) {
+            case 1:
+                if (texto != NULL) free(texto);
+                texto = cargar();
+                break;

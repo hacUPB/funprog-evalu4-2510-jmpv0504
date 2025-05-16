@@ -24,4 +24,3 @@ A) Asigna 5 al puntero mismo.
 
 significa que se está asignando el valor 5 como dirección de memoria al puntero ptr.
 Es decir, ptr ahora apunta a la dirección 5
-

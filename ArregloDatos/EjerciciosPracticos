@@ -1,0 +1,95 @@
+Ejercicio 1
+- Crear un array de 10 números enteros.
+- Rellenarlo con números consecutivos desde el 11 hasta el 20.
+- Imprimirlos en pantalla en orden descendente.
+
+R/ #include <stdio.h>
+
+int main() {
+    int numeros[10];
+
+    // Bucle con los numeros del 11 al 20 
+    for(int i = 0; i < 10; i++) 
+    {
+        numeros[i] = 11 + i;
+    }
+
+    // Imprime los números de forma descendiente
+    printf("Los valores en orden decendente son:\n");
+    for(int i = 9; i >= 0; i--)
+    {
+        printf("%d ", numeros[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+Ejercicio 2
+- Crear un array que contenga números pares desde el 2 hasta el 10.
+- Imprimir los valores de forma ascendente.
+
+R/ #include <stdio.h>
+
+int main() {
+    // Declarar el arreglo y llenarlo directamente con los números pares del 2 al 10
+    int pares[5] = {2, 4, 6, 8, 10};
+
+    // Imprimir los valores de forma ascendente
+    printf("Números paresde forma ascendente:\n");
+    for(int i = 0; i < 5; i++)
+    {
+        printf("%d ", pares[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+
+Ejercicio 3
+- Leer desde teclado 10 números.
+- Calcular y mostrar la suma, resta y multiplicación total de esos números.
+
+R/ #include <stdio.h>
+
+int main()
+{
+    int numeros[10];
+    int suma = 0;
+    int resta;
+    int multiplicacion = 1;
+
+    printf("Ingrese 10 números:\n");
+    for(int i = 0; i < 10; i++)
+    {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+
+        suma = suma + numeros[i];     // Suma total
+        multiplicacion = multiplicacion * numeros[i];     // Multiplicación total
+    }
+
+    // Inicializar la resta con el primer número
+    resta = numeros[0];
+    for(int i = 1; i < 10; i++)
+    {
+        resta -= numeros[i];    // Resta total
+    }
+
+    printf("\nSuma total: %d\n", suma);
+    printf("Resta total: %d\n", resta);
+    printf("Multiplicación total: %d\n", multiplicacion);
+
+    return 0;
+}
+
+
+Ejercicio 4
+- Leer 10 números desde teclado, almacenando los primeros 5 en un array y los últimos 5 en otro.
+- Combinar ambos arrays en un tercer array e imprimir el contenido.
+
+
+
+
