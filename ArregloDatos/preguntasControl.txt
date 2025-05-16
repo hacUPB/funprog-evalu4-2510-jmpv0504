@@ -1,0 +1,17 @@
+1. ¿Qué valor contiene el siguiente dato: dato[5],si el arreglo
+se inicializa de la siguiente manera:int datos[6] = {5, 82, 41};?
+
+R/ datos[0] = 5
+   datos[1] = 82
+   datos[2] = 41
+   datos[3] = 0
+   datos[4] = 0
+   datos[5] = 0   
+Los elementos restantes se rellenan con 0 
+
+2. ¿Cómo determinar el número de elementos en un arreglo cuando
+su tamaño no se especifica explícitamente?
+
+R/
+int arreglo[] = {1, 2, 3, 4, 5};
+int tamaño = sizeof(arreglo) / sizeof(arreglo[0]);
