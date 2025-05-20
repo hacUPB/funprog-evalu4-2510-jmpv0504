@@ -103,7 +103,7 @@ int main() {
                 else printf("Primero debes cargar un archivo.\n");
                 break;
             case 4:
-                printf("Saliendo...\n");
+                printf("Saliendo\n");
                 break;
             default:
                 printf("Opcion no valida.\n");
