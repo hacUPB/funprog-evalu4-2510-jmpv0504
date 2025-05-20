@@ -38,8 +38,67 @@ Prototipo [char *strtok(char *str, const char *delim);]
 Retorna: el siguiente token, o NULL.
 
 
+<ctype.h> 
+
+isalpha: se utiliza para verificar si un carácter es una letra del alfabeto (mayúscula o minúscula).
+Prototipo: int isalpha(int c);
+Retorna: Retorna un valor distinto de cero (verdadero) Retorna 0 (falso)}
+
+isdigit: se utiliza para verificar si un carácter es un dígito numérico (0-9).
+Prototipo: int isdigit(int c);
+Retorna: un valor distinto de cero (verdadero) Retorna 0 (falso) si no es un dígito.
+
+isalnum: verifica si un carácter es alfanumérico
+Prototipo: int isalnum(int c);
+Retorna:Valor distinto de cero (verdadero) si el carácter es alfanumérico. 0 (falso) si no lo es.
+
+islower: verifica si un carácter es una letra minúscula del alfabeto inglés (a-z).
+Prototipo: int islower(int c);
+Retorna: Retorna un valor distinto de cero (verdadero) si el carácter es una letra minúscula Retorna 0 (falso) si no lo es.
+
+isupper: se usa para verificar si un carácter es una letra mayúscula (A-Z).
+Prototipo: int isupper(int c);
+Retorna: Retorna un valor distinto de cero (verdadero) o 0 (falso)
+
+tolower: convierte un carácter mayúscula (A-Z) a su equivalente en minúscula (a-z)
+Prototipo: int tolower(int c);
+Retorna:Retorna el carácter en minúscula si era mayúscula Retorna el mismo carácter si no era una letra mayúscula
+
+toupper: convierte un carácter minúscula (a-z) a su equivalente en mayúscula (A-Z)
+Prototipo: int toupper(int c);
+Retorna: Retorna el carácter en mayúscula si era minúscula retorna el mismo carácter si no era una letra minúscula
 
 
+Preguntas de Control 
+1. ¿Por qué `sizeof("Hola")` devuelve 5, pero `strlen("Hola")` devuelve 4?
 
+sizeof: Calcula el tamaño total del arreglo en memoria, incluyendo el carácter nulo (\0) al final.
+strlen: Cuenta solo los caracteres hasta (pero sin incluir) el \0.
 
+2. ¿Cuál es la diferencia práctica entre declarar una cadena como arreglo (`char saludo[]`) y como puntero (`char *saludo`)?
 
+char saludo[] = "Hola"; Arreglo en memoria modificable
+char *saludo = "Hola"; Puntero a una cadena inmodificable
+
+3. ¿Cómo evitas un "buffer overflow" al copiar o concatenar cadenas?
+
+Usa funciones que limiten el tamaño de escritura, 
+ejemplo: snprintf(dest, tamaño_max, "%s", src)
+
+4. ¿Qué hace exactamente la función `strcspn()` y por qué es útil usarla junto con `fgets()`?
+
+strcspn(cadena, "\n") busca el \n (enter) en una cadena y devuelve su posición.
+Uso con fgets():
+fgets() guarda el \n al final (cuando alcanza el límite de tamaño).
+
+5. ¿Qué pasos debes seguir para manejar correctamente una cadena reservada dinámicamente con `malloc()`?
+char *cadena = malloc(50 * sizeof(char));  // reservamos memoria 
+
+if (cadena == NULL) { 
+    printf("Error: No hay memoria.\n");    // se verifica que no falle 
+    exit(1);  
+}  
+
+strcpy(cadena, "Ejemplo");  // Usamos la memoria 
+
+free(cadena);  // liberamos 

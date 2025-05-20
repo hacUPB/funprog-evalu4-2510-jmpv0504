@@ -94,3 +94,23 @@ int main() {
                 if (texto != NULL) free(texto);
                 texto = cargar();
                 break;
+                 case 2:
+                if (texto != NULL) estadisticas(texto);
+                else printf("Primero debes cargar un archivo.\n");
+                break;
+            case 3:
+                if (texto != NULL) contar_vocales(texto);
+                else printf("Primero debes cargar un archivo.\n");
+                break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opcion no valida.\n");
+        }
+
+    } while (opcion != 4);
+
+    if (texto != NULL) free(texto);
+    return 0;
+}

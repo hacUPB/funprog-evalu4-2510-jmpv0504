@@ -2,9 +2,8 @@ Ejercicio 1
 - Crear un array de 10 números enteros.
 - Rellenarlo con números consecutivos desde el 11 hasta el 20.
 - Imprimirlos en pantalla en orden descendente.
-
-R/ #include <stdio.h>
-
+R/ 
+#include <stdio.h>
 int main() {
     int numeros[10];
 
@@ -29,14 +28,13 @@ int main() {
 Ejercicio 2
 - Crear un array que contenga números pares desde el 2 hasta el 10.
 - Imprimir los valores de forma ascendente.
-
-R/ #include <stdio.h>
-
+R/
+#include <stdio.h>
 int main() {
-    // Declarar el arreglo y llenarlo directamente con los números pares del 2 al 10
+    // Declarar el arreglo y lo llena directamente con los números pares del 2 al 10
     int pares[5] = {2, 4, 6, 8, 10};
 
-    // Imprimir los valores de forma ascendente
+    // Imprimime los valores de forma ascendente
     printf("Números paresde forma ascendente:\n");
     for(int i = 0; i < 5; i++)
     {
@@ -51,9 +49,8 @@ int main() {
 Ejercicio 3
 - Leer desde teclado 10 números.
 - Calcular y mostrar la suma, resta y multiplicación total de esos números.
-
-R/ #include <stdio.h>
-
+R/
+#include <stdio.h>
 int main()
 {
     int numeros[10];
@@ -67,15 +64,15 @@ int main()
         printf("Número %d: ", i + 1);
         scanf("%d", &numeros[i]);
 
-        suma = suma + numeros[i];     // Suma total
-        multiplicacion = multiplicacion * numeros[i];     // Multiplicación total
+        suma = suma + numeros[i];   // Suma total
+        multiplicacion = multiplicacion * numeros[i]; // Multiplicación total
     }
 
     // Inicializar la resta con el primer número
     resta = numeros[0];
     for(int i = 1; i < 10; i++)
     {
-        resta -= numeros[i];    // Resta total
+        resta = resta - numeros[i];    // Resta total
     }
 
     printf("\nSuma total: %d\n", suma);
@@ -89,7 +86,64 @@ int main()
 Ejercicio 4
 - Leer 10 números desde teclado, almacenando los primeros 5 en un array y los últimos 5 en otro.
 - Combinar ambos arrays en un tercer array e imprimir el contenido.
+R/
+#include <stdio.h>
+int main()
+{
+    // Definimos un arreglo 
+    int numeros[] = {10, 5, 3};
+    int resta_total = 100;
+    int cantidad_numeros = sizeof(numeros) / sizeof(numeros[0]);
+    
+    for (int i = 0; i < cantidad_numeros; i++)
+    {
+        resta_total = resta_total - numeros[i];
+    }
+    printf("El resultado de la resta es: %d\n", resta_total);
+    
+    return 0;
+}
 
+Ejercicios propuestos
 
+1)Crear una función que reciba un arreglo de enteros y su tamaño,
+y calcule el promedio de sus valores.
+R/
+#include <stdio.h>
+float calcularPromedio(int arreglo[], int tamaño)
+{
+float suma = 0
+for (int i = 0; i < tamaño; i++)
+{
 
+        suma += arreglo[i];
+}
+return suma / tamaño;
+}
 
+int main()
+{
+    int numeros[] = {10, 20, 30, 40, 50};
+    int tamaño = sizeof(numeros) / sizeof(numeros[0]);
+    
+    float resultado = calcularPromedio(numeros, tamaño);
+    printf("El promedio es: %.3f\n", resultado);
+    
+    return 0;
+}
+
+Preguntas finales
+
+1. ¿Cuál es exactamente la diferencia entre un arreglo y un puntero?
+
+Arreglo: Bloque de memoria fijo que guarda datos del mismo tipo.
+Puntero: Variable que almacena una dirección de memoria.
+Un arreglo no se puede reasignar mientras que un puntero si. 
+
+2. ¿Cómo están almacenados en la memoria los elementos de una matriz?
+
+Se almacenan por filas.
+
+3. ¿Qué precauciones se deben tomar al usar punteros para recorrer arreglos?
+
+No te pases del tamaño que se le asigna. 

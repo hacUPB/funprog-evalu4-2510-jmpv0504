@@ -1,3 +1,7 @@
+
+//Declara un arreglo, y llénalo con datos. Puedes utilizar el ejemplo anterior. 
+//Luego imprime en pantalla las posiciones de memoria correspondientes a cada posición.
+
 #include <stdio.h>
 
 int main() {
