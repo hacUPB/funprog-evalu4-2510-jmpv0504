@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>:
+
 
 void menu()
 {
@@ -180,6 +183,10 @@ int main()
             case 1:
                 if (texto != NULL) free(texto);
                 texto = cargar();
+                if (texto == NULL)
+                {
+                    printf("Error al cargar el archivo.\n");
+                }
                 break;
             case 2:
                 if (texto != NULL) estadisticas(texto);
