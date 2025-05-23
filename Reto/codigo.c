@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <ctype.h>:
+
 
 void menu()
 {
@@ -12,9 +15,9 @@ void menu()
 }
 
 // Cargar archivo
-int cargar(char texto[])
+char* cargar()
 {
-    char nombre[];
+    char nombre[100];
     printf("Nombre del archivo (ej: texto.txt): ");
     scanf("%s", nombre);
 
@@ -41,6 +44,9 @@ int cargar(char texto[])
         texto[i++] = c;
     }
     texto[i] = '\0';
+    fclose(archivo);
+    return texto;
+}
     
     
 // Estadísticas
@@ -93,6 +99,10 @@ int main() {
             case 1:
                 if (texto != NULL) free(texto);
                 texto = cargar();
+                if (texto == NULL)
+                {
+                    printf("Error al cargar el archivo.\n");
+                }
                 break;
                  case 2:
                 if (texto != NULL) estadisticas(texto);
